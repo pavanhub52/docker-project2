@@ -1,13 +1,10 @@
 pipeline {
-    agent { label "build" }
-    environment {
-         def ip = sh returnStdout: true, script: 'curl -s http://169.254.169.254/latest/meta-data/public-ipv4'
-    }
-
+    agent any
+   
     stages {
         stage("checkout"){
             steps {
-                checkout scm
+                git 'https://github.com/pavanhub52/docker-project2.git' 
             }
         }
 
@@ -59,7 +56,7 @@ pipeline {
         }	
     }
 		
-    post {
+  /*  post {
         always {
             node("build") {
                dir ( "/home/ubuntu/workspace/ZervOnboarding/testing/" ) { 
@@ -77,5 +74,5 @@ pipeline {
                 }
             }
         }    
-    }
+    } */
 }
