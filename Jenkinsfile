@@ -8,13 +8,13 @@ pipeline {
             }
         }
 
-        stage("static code analysis"){
+     /*   stage("static code analysis"){
             steps {
                 withSonarQubeEnv('sonar') {
                     sh '/etc/sonarqube/bin -Dsonar.projectKey=market52 -Dsonar.sources=api'
                 }
             }
-        }
+        } */
 
         stage("build docker image"){
             steps {
