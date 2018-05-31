@@ -11,7 +11,7 @@ pipeline {
         stage("static code analysis"){
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh '/opt/sonar/bin/sonar-scanner -Dsonar.projectKey=market52 -Dsonar.sources=api'
+                    sh '/etc/sonarqube/bin -Dsonar.projectKey=market52 -Dsonar.sources=api'
                 }
             }
         }
