@@ -11,7 +11,7 @@ pipeline {
         stage("static code analysis"){
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh '/opt/sonar/bin/sonar-scanner -Dsonar.projectKey=ZervOnboarding -Dsonar.sources=api'
+                    sh '/opt/sonar/bin/sonar-scanner -Dsonar.projectKey=market52 -Dsonar.sources=api'
                 }
             }
         }
