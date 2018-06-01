@@ -18,7 +18,7 @@ pipeline {
 
         stage("build docker image"){
             steps {
-                sh "docker-compose build"
+                sh "docker build -t wes ."
             }
         }
 
